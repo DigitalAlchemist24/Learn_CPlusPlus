@@ -1,0 +1,119 @@
+/* This is a game of Rock, Paper, Scissors, Lizard, Spock! The advanced version of the classic Rock, Paper, Scissors game. The logic is as follows. 
+Scissors cuts Paper. 
+Paper covers Rock.
+Rock crushes Lizard.
+Lizard poisons Spock.
+Spock smashes Scissors.
+Scissors decapitate Lizard.
+Lizard eats Paper.
+Paper disproves Spock.
+Spock vaporizes Rock.
+(and as it always has) Rock crushes Scissors.
+
+Now on with the code! */
+
+#include <iostream>
+#include <stdlib.h>
+
+int main() {
+
+  //Numbers of Computer & User 
+   srand (time(NULL));
+   int comp = rand() % 5 + 1;
+   int user = 0;  
+
+  // ROCK PAPER SCISSORS
+
+   std::cout << "======================================\n";
+   std::cout << "Rock, Paper, Scissors, Lizard, Spock!\n";
+   std::cout << "======================================\n";
+  
+   std::cout << "1) Rock\n";
+   std::cout << "2) Paper\n";
+   std::cout << "3) Scissors\n";
+   std::cout << "4) Lizard\n";
+   std::cout << "5) Spock\n";
+
+   std::cout << "Shoot! ";
+   std::cin >> user;
+   std::cout << "\n";
+
+  //Player & Computer Choices
+   switch (user) {
+     case 1:
+      std::cout << "Player picks Rock!\n";
+      break;
+     case 2:
+      std::cout << "Player picks Paper!\n";
+      break;
+     case 3:
+      std::cout << "Player picks Scissors!\n";
+      break;
+     case 4:
+      std::cout << "Player picks Lizard!\n";
+      break;
+     case 5:
+      std::cout << "Player picks Spock!\n";
+      break;     
+   }
+   switch (comp) {
+     case 1:
+      std::cout << "CPU picks Rock!\n";
+      break;
+     case 2:
+      std::cout << "CPU picks Paper!\n";
+      break;
+     case 3:
+      std::cout << "CPU picks Scissors!\n";
+      break;
+     case 4:
+      std::cout << "CPU picks Lizard!\n";
+      break;
+     case 5:
+      std::cout << "CPU picks Spock!\n";
+      break;
+   } 
+ 
+  //Logic
+   //Draw
+    if (user==comp) {
+     std::cout << "Its a Draw! No Winner!\n";
+    }
+   //Computer Wins  
+    else if (comp==1&&user==3||user==4) {
+     std::cout << "Computer Wins! Back Luck..\n";
+    }
+    else if (comp==2&&user==1||user==5) {
+     std::cout << "Computer Wins! Back Luck..\n";
+    }
+    else if (comp==3&&user==2||user==4) {
+     std::cout << "Computer Wins! Back Luck..\n";
+    }
+    else if (comp==4&&user==5||user==2) {
+     std::cout << "Computer Wins! Back Luck..\n";
+    }
+    else if (comp==5&&user==3||user==1) {
+     std::cout << "Computer Wins! Back Luck..\n";
+    }
+   //Player Wins
+    else if (user==1&&comp==3||comp==4) {
+     std::cout << "Player Wins! Congrats!\n";
+    }
+    else if (user==2&&comp==1||comp==5) {
+     std::cout << "Player Wins! Congrats!\n";
+    }
+    else if (user==3&&comp==2||comp==4) {
+     std::cout << "Player Wins! Congrats!\n";
+    }
+    else if (user==4&&comp==2||comp==5) {
+     std::cout << "Player Wins! Congrats!\n";
+    }
+    else if (user==5&&comp==3||comp==1) {
+     std::cout << "Player Wins! Congrats!\n";
+    }
+   // Debug for Other Numbers Entries
+    else {
+     std::cout << "Can you please repeat that?\n";
+    }  
+    
+}
